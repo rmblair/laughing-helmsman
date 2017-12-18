@@ -6,6 +6,7 @@ if [[ 0 -ne "$rc" ]]; then
   echo "copy cluster_vars.sh.template to cluster_vars.sh and fix"
   exit 1
 fi
+unset rc
 
 # Flannel / Canal required
 POD_NETWORK_CIDR="10.244.0.0/16"
