@@ -25,3 +25,4 @@ cni_plugins_url="https://github.com/containernetworking/plugins/releases/downloa
 cni_dist_dir="${PWD}/dist/cni-${cni_plugins_ver}"
 
 canal_ver="1.7"
+canal_base_url="https://raw.githubusercontent.com/projectcalico/canal/master/k8s-install/${canal_ver}"
