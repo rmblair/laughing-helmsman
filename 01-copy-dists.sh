@@ -41,6 +41,8 @@ for node in ${!controllers[@]} ${!instances[@]}; do
   "
 
   # copy dist binaries
+  scp "${cni_dist_dir}/${cni_plugins_file}" \
+    root@${node}:/root/
   scp \
     "${k8s_dist_dir}/kubeadm" \
     "${k8s_dist_dir}/kubelet" \
@@ -52,6 +54,18 @@ for node in ${!controllers[@]} ${!instances[@]}; do
   # copy kubelet systemd unit
   scp dist/kubelet.service \
     root@${node}:/etc/systemd/system
+
+  # unpack CNI bits
+  ssh root@${node} "\
+    mkdir -p \
+      /etc/cni/net.d \
+      /opt/cni/bin \
+      /var/lib/kubelet \
+      /var/lib/kube-proxy \
+      /var/lib/kubernetes \
+      /var/run/kubernetes ;\
+    tar -xvf /root/${cni_plugins_file} -C /opt/cni/bin/
+  "
 
   # switch on
   ssh root@${node} "\
