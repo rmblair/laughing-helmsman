@@ -42,3 +42,15 @@ fi
     fi
   done
 )
+
+if [[ ! -d "${cni_dist_dir}" ]]; then
+  mkdir "${cni_dist_dir}"
+fi
+
+(
+  cd "${cni_dist_dir}"
+  if [[ ! -f "${cni_plugins_file}" ]]; then
+     wget -q --show-progress --https-only --timestamping \
+       "${cni_plugins_url}"
+  fi
+)
