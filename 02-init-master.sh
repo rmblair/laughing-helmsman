@@ -23,3 +23,8 @@ ssh root@${!controllers[@]} "\
 #ssh root@${!controllers[@]} "\
 #  kubectl --kubeconfig /etc/kubernetes/admin.conf taint nodes --all node-role.kubernetes.io/master-
 #"
+
+echo join nodes this way using the kubeadm join command from above:
+echo for node in ${!instances[@]}\; do
+echo ssh root@\${node} \'kubeadm join ....\'
+echo done
