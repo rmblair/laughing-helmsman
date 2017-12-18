@@ -1,0 +1,12 @@
+declare -A controllers
+
+controllers["controller-0"]="10.10.10.10"
+controllers["controller-1"]="10.10.10.11"
+controllers["controller-2"]="10.10.10.12"
+
+declare -A instances
+
+instances["instance-0"]="10.10.10.20"
+instances["instance-1"]="10.10.10.21"
+instances["instance-2"]="10.10.10.22"
+instances["instance-3"]="10.10.10.23"
