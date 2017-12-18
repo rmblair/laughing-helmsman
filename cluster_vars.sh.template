@@ -1,8 +1,7 @@
 declare -A controllers
 
+# kubeadm only supports one controller at the moment
 controllers["controller-0"]="10.10.10.10"
-controllers["controller-1"]="10.10.10.11"
-controllers["controller-2"]="10.10.10.12"
 
 declare -A instances
 
