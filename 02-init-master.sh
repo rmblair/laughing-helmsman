@@ -19,3 +19,7 @@ ssh root@${!controllers[@]} "\
   kubectl --kubeconfig /etc/kubernetes/admin.conf apply -f ${canal_base_url}/canal.yaml
 "
 
+# taint the master (allows user pods to be scheduled here)
+#ssh root@${!controllers[@]} "\
+#  kubectl --kubeconfig /etc/kubernetes/admin.conf taint nodes --all node-role.kubernetes.io/master-
+#"
