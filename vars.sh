@@ -15,9 +15,9 @@ case "$POD_NETPLUGIN" in
   calico)
     # Calico default
     POD_NETWORK_CIDR="192.168.0.0/16"
-    calico_ver="v2.6"
-    calico_url="https://docs.projectcalico.org/${calico_ver}/getting-started/kubernetes/installation/hosted/kubeadm/1.6/calico.yaml"
-    calicoctl_url="https://docs.projectcalico.org/${calico_ver}/getting-started/kubernetes/installation/hosted/calicoctl.yaml"
+    calico_ver="v3.0"
+    calico_url="https://docs.projectcalico.org/${calico_ver}/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml"
+    calicoctl_url="kubectl apply -f https://docs.projectcalico.org/${calico_ver}/getting-started/kubernetes/installation/hosted/kubernetes-datastore/calicoctl.yaml"
     ;;
   canal)
     # Flannel / Canal required
@@ -26,7 +26,7 @@ case "$POD_NETPLUGIN" in
   flannel)
     # Flannel / Canal required
     POD_NETWORK_CIDR="10.244.0.0/16"
-    flannel_ver="v0.9.1"
+    flannel_ver="v0.10.0"
     flannel_url="https://raw.githubusercontent.com/coreos/flannel/${flannel_ver}/Documentation/kube-flannel.yml"
     ;;
   romana)
@@ -43,7 +43,7 @@ case "$POD_NETPLUGIN" in
 esac
 
 #k8s_ver="v1.8.5"
-k8s_ver="v1.9.0"
+k8s_ver="v1.9.3"
 k8s_base_url="https://storage.googleapis.com/kubernetes-release/release/${k8s_ver}/bin/linux/amd64"
 k8s_dist_dir="${PWD}/dist/k8s-dist-${k8s_ver}"
 
