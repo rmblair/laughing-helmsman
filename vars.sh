@@ -42,8 +42,8 @@ case "$POD_NETPLUGIN" in
   POD_NETWORK_CIDR="10.244.0.0/16"
 esac
 
-#k8s_ver="v1.8.5"
-k8s_ver="v1.9.3"
+#k8s_ver="v1.8.9"
+k8s_ver="v1.9.4"
 k8s_base_url="https://storage.googleapis.com/kubernetes-release/release/${k8s_ver}/bin/linux/amd64"
 k8s_dist_dir="${PWD}/dist/k8s-dist-${k8s_ver}"
 
